@@ -8,12 +8,12 @@ import Cart from "./pages/Cart";
 const App = () => {
   return (
     <div>
-      {/* <Home /> */}
+      <Home />
       {/* <ProductList /> */}
       {/* <Product /> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 };

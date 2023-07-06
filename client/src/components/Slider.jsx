@@ -3,14 +3,15 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useState } from "react";
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  /* background: coral; */
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
@@ -54,7 +55,6 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 80%;
-  /* My code */
   width: 100%;
   top: 50;
   object-fit: contain;
