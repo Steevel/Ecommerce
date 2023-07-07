@@ -10,10 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "crypto-js": "^4.1.1",
+=======
+>>>>>>> d02f054c3e91bda34efcf89ee9ecaa2ddb90a4cd
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^7.3.1",
     "nodemon": "^2.0.22"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d02f054c3e91bda34efcf89ee9ecaa2ddb90a4cd
