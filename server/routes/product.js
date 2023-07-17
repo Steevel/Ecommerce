@@ -20,7 +20,7 @@ router.post("/", verifyTokenAndAdmin, async (req, res) => {
 // UPDATE
 router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
-    const updatedProduct = await User.findByIdAndUpdate(
+    const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
         $set: req.body,
@@ -28,8 +28,8 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
       { new: true }
     );
     res.status(200).json(updatedProduct);
-  } catch (e) {
-    return res.status(401).json("Your are not authenticated!");
+  } catch (error) {
+    return res.status(500).json(error);
   }
 });
 
