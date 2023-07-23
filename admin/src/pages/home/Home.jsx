@@ -8,7 +8,6 @@ import "./home.css";
 const Home = () => {
   return (
     <div className="home">
-      Home
       <FeaturedInfo />
       <Chart
         data={userData}
