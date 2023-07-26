@@ -4,11 +4,11 @@ import Product from "./Product";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const config = {
-  headers: {
-    token: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjRkMTUwNWM4NGQxNjBmOTU3N2UzZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5MDI3NzI5MCwiZXhwIjoxNjkwNTM2NDkwfQ.WPAx9b82t5INivJBwYMZ5q4ZI7--LH-R73r6E9DG9eE`,
-  },
-};
+// const config = {
+//   headers: {
+//     token: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjRkMTUwNWM4NGQxNjBmOTU3N2UzZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5MDI3NzI5MCwiZXhwIjoxNjkwNTM2NDkwfQ.WPAx9b82t5INivJBwYMZ5q4ZI7--LH-R73r6E9DG9eE`,
+//   },
+// };
 
 const Container = styled.div`
   padding: 20px;
@@ -27,8 +27,7 @@ const Products = ({ cat, filters, sort }) => {
         const res = await axios.get(
           cat
             ? `http://localhost:5000/api/products?category=${cat}`
-            : "http://localhost:5000/api/products",
-          config
+            : "http://localhost:5000/api/products"
         );
         setProducts(res.data);
       } catch (err) {
