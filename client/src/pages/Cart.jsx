@@ -5,6 +5,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { useEffect, useState } from "react";
+import { userRequest } from "../requestMethods";
+import { useNavigate } from "react-router-dom";
+
+const KEY = import.meta.env.VITE_REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -155,6 +161,23 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+  console.log(cart);
+
+  const handleCheckout = async () => {
+    try {
+      const res = await userRequest.post("/checkout/create-checkout-session", {
+        items: cart.products,
+      });
+
+      window.location = res.data.url;
+
+      console.log(res.data.url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container>
       <Navbar />
@@ -208,21 +231,21 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>&#8377; {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>&#8377; 5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>&#8377; -5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>&#8377; {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            <Button onClick={handleCheckout}>CHECKOUT NOW</Button>
           </Summary>
         </Bottom>
       </Wrapper>
