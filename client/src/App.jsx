@@ -7,9 +7,10 @@ import Cart from "./pages/Cart";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  const user = false;
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <div>
       <Routes>
