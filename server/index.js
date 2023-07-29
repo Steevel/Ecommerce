@@ -18,6 +18,9 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome!</h1>");
+});
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
