@@ -10,7 +10,10 @@ import Cancel from "./pages/Cancel";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const user = useSelector((state) => state.user.currentUser);
+  const user = useSelector((state) => state.user?.currentUser);
+  const regUser = useSelector((state) => state.register?.currentUser);
+  console.log("regUser", regUser);
+
   return (
     <div>
       <Routes>
@@ -20,10 +23,13 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
-        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+        <Route
+          path="/login"
+          element={user || regUser ? <Navigate to="/" /> : <Login />}
+        />
         <Route
           path="/register"
-          element={user ? <Navigate to="/" /> : <Register />}
+          element={user || regUser ? <Navigate to="/" /> : <Register />}
         />
       </Routes>
     </div>
