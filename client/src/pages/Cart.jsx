@@ -162,7 +162,7 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
-  console.log(cart);
+  // console.log(cart);
 
   const handleCheckout = async () => {
     try {
