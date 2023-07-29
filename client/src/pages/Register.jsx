@@ -3,6 +3,7 @@ import { mobile } from "../responsive";
 import { useDispatch } from "react-redux";
 import { register } from "../redux/apiCalls";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -85,15 +86,19 @@ const Register = () => {
           />
           <Input
             placeholder="password"
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Input placeholder="confirm password" />
+          <Input placeholder="confirm password" type="password" />
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
           <Button onClick={handleClick}>CREATE</Button>
         </Form>
+        <span>
+          <Link to="/login">Already have an account? Login here</Link>
+        </span>
       </Wrapper>
     </Container>
   );

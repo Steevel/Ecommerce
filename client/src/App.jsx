@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 const App = () => {
   const user = useSelector((state) => state.user?.currentUser);
   const regUser = useSelector((state) => state.register?.currentUser);
-  console.log("regUser", regUser);
+  // console.log("regUser", regUser);
 
   return (
     <div>
