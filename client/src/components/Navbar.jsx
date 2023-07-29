@@ -84,7 +84,9 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>SHOP.</Logo>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Logo>SHOP.</Logo>
+          </Link>
         </Center>
         <Right>
           <Link to="/register">
