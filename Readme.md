@@ -27,3 +27,17 @@ This project is an online shopping platform where users can browse and purchase 
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Express.Js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Node.Js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+- Frontend: Built using React, a popular JavaScript library for building user interfaces.
+
+- Backend: Powered by Node.js and Express, providing robust and efficient server-side functionalities.
+
+- Database: Utilizes MongoDB for storing product, user data.
+
+- Styling: Styled Components for efficient and maintainable styling.
+
+- State Management: Implements React Context or Redux for state management, depending on the project's complexity.
+
+- Authentication: Utilizes JWT (JSON Web Tokens) for secure user authentication.
+
+- Payment Gateway Integration: Integrates with a reliable payment gateway for smooth and secure payment processing.
