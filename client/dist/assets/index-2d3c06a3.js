@@ -373,7 +373,7 @@ Error generating stack: `+i.message+`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
-`,a3=()=>{const[e,t]=O.useState(0),n=r=>{t(r==="left"?e>0?e-1:2:e<2?e+1:0)};return g.jsxs(Z$,{children:[g.jsx(qm,{direction:"left",onClick:()=>n("left"),children:g.jsx(B1,{})}),g.jsx(e3,{slideIndex:e,children:X$.map(r=>g.jsxs(t3,{bg:r.bg,children:[g.jsx(n3,{children:g.jsx(r3,{src:r.img})}),g.jsxs(o3,{children:[g.jsx(i3,{children:r.title}),g.jsx(s3,{children:r.desc}),g.jsx(l3,{children:"SHOW NOW"})]})]}))}),g.jsx(qm,{direction:"right",onClick:()=>n("right"),children:g.jsx(U1,{})})]})},u3=b.div`
+`,a3=()=>{const[e,t]=O.useState(0),n=r=>{t(r==="left"?e>0?e-1:2:e<2?e+1:0)};return g.jsxs(Z$,{children:[g.jsx(qm,{direction:"left",onClick:()=>n("left"),children:g.jsx(B1,{})}),g.jsx(e3,{slideIndex:e,children:X$.map(r=>g.jsxs(t3,{bg:r.bg,children:[g.jsx(n3,{children:g.jsx(r3,{src:r.img})}),g.jsxs(o3,{children:[g.jsx(i3,{children:r.title}),g.jsx(s3,{children:r.desc}),g.jsx(l3,{children:"SHOW NOW"})]})]},r.id))}),g.jsx(qm,{direction:"right",onClick:()=>n("right"),children:g.jsx(U1,{})})]})},u3=b.div`
   flex: 1;
   margin: 3px;
   height: 70vh;
@@ -465,7 +465,7 @@ Error generating stack: `+i.message+`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-`,K1=({cat:e,filters:t,sort:n})=>{const[r,o]=O.useState([]),[i,s]=O.useState([]);return O.useEffect(()=>{(async()=>{try{const a=await Vd.get(e?`https://ecommerce-backend-api-3mek.onrender.com/api/products?category=${e}`:"https://ecommerce-backend-api-3mek.onrender.com/api/products");o(a.data)}catch(a){console.log(a.message)}})()},[e]),O.useEffect(()=>{e&&s(r.filter(l=>Object.entries(t).every(([a,u])=>l[a].includes(u))))},[r,e,t]),O.useEffect(()=>{s(n==="newest"?l=>[...l].sort((a,u)=>a.createdAt-u.createdAt):n==="asc"?l=>[...l].sort((a,u)=>a.price-u.price):l=>[...l].sort((a,u)=>u.price-a.price))},[n]),g.jsx($3,{children:e?i.map(l=>g.jsx(Qm,{item:l},l.id)):r.slice(0,4).map(l=>g.jsx(Qm,{item:l},l.id))})},_3=()=>g.jsxs("div",{children:[g.jsx(xo,{}),g.jsx(Pa,{}),g.jsx(a3,{}),g.jsx(g3,{}),g.jsx(K1,{}),g.jsx(Td,{}),g.jsx(Oa,{})]}),R3=b.div``,j3=b.h1`
+`,K1=({cat:e,filters:t,sort:n})=>{const[r,o]=O.useState([]),[i,s]=O.useState([]);return O.useEffect(()=>{(async()=>{try{const a=await Vd.get(e?`https://ecommerce-backend-api-3mek.onrender.com/api/products?category=${e}`:"https://ecommerce-backend-api-3mek.onrender.com/api/products");o(a.data)}catch(a){console.log(a.message)}})()},[e]),O.useEffect(()=>{e&&s(r.filter(l=>Object.entries(t).every(([a,u])=>l[a].includes(u))))},[r,e,t]),O.useEffect(()=>{s(n==="newest"?l=>[...l].sort((a,u)=>a.createdAt-u.createdAt):n==="asc"?l=>[...l].sort((a,u)=>a.price-u.price):l=>[...l].sort((a,u)=>u.price-a.price))},[n]),g.jsx($3,{children:e?i.map(l=>g.jsx(Qm,{item:l},l._id)):r.slice(0,4).map(l=>g.jsx(Qm,{item:l},l._id))})},_3=()=>g.jsxs("div",{children:[g.jsx(xo,{}),g.jsx(Pa,{}),g.jsx(a3,{}),g.jsx(g3,{}),g.jsx(K1,{}),g.jsx(Td,{}),g.jsx(Oa,{})]}),R3=b.div``,j3=b.h1`
   margin: 20px;
 `,T3=b.div`
   display: flex;
